@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparación de viento</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>Comparación de viento observado y modelos</h1>
+    <p>Las Salinas Norte - Año 2025</p>
+</header>
+
+<nav>
+    <button onclick="mostrarSeccion('series')">Series mensuales</button>
+    <button onclick="mostrarSeccion('intensidad')">Estadísticos intensidad</button>
+    <button onclick="mostrarSeccion('direccion')">Estadísticos dirección</button>
+</nav>
+
+<main>
+
+<section id="series" class="seccion activa">
+    <h2>Series mensuales</h2>
+
+    <div class="control">
+        <label for="selectorMes">Seleccionar mes:</label>
+        <select id="selectorMes" onchange="cambiarMes()">
+            <option value="01">Enero</option>
+            <option value="02">Febrero</option>
+            <option value="03">Marzo</option>
+            <option value="04">Abril</option>
+            <option value="05">Mayo</option>
+            <option value="06">Junio</option>
+            <option value="07">Julio</option>
+            <option value="08">Agosto</option>
+            <option value="09">Septiembre</option>
+            <option value="10">Octubre</option>
+            <option value="11">Noviembre</option>
+            <option value="12">Diciembre</option>
+        </select>
+    </div>
+
+    <p class="nota">
+        Para ver tus resultados reales, copia tus figuras mensuales en la carpeta
+        <strong>figuras/</strong> con nombres como <strong>serie_01.png</strong>,
+        <strong>serie_02.png</strong>, etc.
+    </p>
+
+    <img id="figuraMes" src="figuras/serie_01.png" alt="Serie mensual de viento" onerror="mostrarMensajeFigura()">
+    <div id="mensajeFigura" class="mensaje oculto">
+        No se encontró la figura del mes seleccionado. Verifica que exista en la carpeta <strong>figuras/</strong>.
+    </div>
+</section>
+
+<section id="intensidad" class="seccion">
+    <h2>Estadísticos mensuales - Intensidad del viento</h2>
+    <p class="nota">Esta tabla se carga desde <strong>datos/intensidad.csv</strong>.</p>
+    <div id="tablaIntensidad" class="tabla-contenedor"></div>
+</section>
+
+<section id="direccion" class="seccion">
+    <h2>Estadísticos mensuales - Dirección del viento</h2>
+    <p class="nota">Esta tabla se carga desde <strong>datos/direccion.csv</strong>.</p>
+    <div id="tablaDireccion" class="tabla-contenedor"></div>
+</section>
+
+</main>
+
+<footer>
+    Comparación meteorológica Las Salinas - 2025
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
