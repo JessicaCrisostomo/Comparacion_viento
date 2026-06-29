@@ -35,11 +35,11 @@ function cargarCSV(ruta, contenedorID) {
             return response.text();
         })
         .then(data => {
-            const filas = data.trim().split('\n');
+            const filas = data.trim().split(/\r?\n/);
             let html = '<table>';
 
             filas.forEach((fila, i) => {
-                const columnas = fila.split(',');
+                const columnas = fila.split(',').map(col => col.trim());
                 html += '<tr>';
 
                 columnas.forEach(columna => {
