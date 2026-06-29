@@ -1,7 +1,0 @@
-Mes,Modelo,Correlacion,MAE_circular,RMSE_circular,BIAS_circular
-Enero,Europeo,0.70,25.40,34.80,-5.20
-Enero,GFS,0.65,30.10,40.50,8.30
-Enero,Meteoblue,0.68,27.80,36.90,3.10
-Febrero,Europeo,0.72,24.20,33.60,-4.40
-Febrero,GFS,0.66,29.70,39.80,7.90
-Febrero,Meteoblue,0.69,26.90,36.10,2.80
