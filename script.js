@@ -1,1 +1,1 @@
-console.log('Archivo listo');
+console.log('Listo para cargar CSV');
