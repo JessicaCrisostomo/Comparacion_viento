@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Comparación de viento</title>
+<script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>Comparación observado vs modelos</h1>
+    <p>Las Salinas Norte - Año 2025</p>
+</header>
+
+<nav>
+    <button onclick="mostrarSeccion('series')">Series temporales</button>
+    <button onclick="mostrarSeccion('intensidad')">Estadísticos intensidad</button>
+    <button onclick="mostrarSeccion('direccion')">Estadísticos dirección</button>
+</nav>
+
+<section id="series" class="seccion activa">
+    <label for="selectorMes">Seleccionar mes:</label>
+    <select id="selectorMes" onchange="actualizarGraficos()">
+        <option value="0">Enero</option>
+        <option value="1">Febrero</option>
+        <option value="2">Marzo</option>
+        <option value="3">Abril</option>
+        <option value="4">Mayo</option>
+        <option value="5">Junio</option>
+        <option value="6">Julio</option>
+        <option value="7">Agosto</option>
+        <option value="8">Septiembre</option>
+        <option value="9">Octubre</option>
+        <option value="10">Noviembre</option>
+        <option value="11">Diciembre</option>
+    </select>
+
+    <h2>Intensidad del viento</h2>
+    <div id="graficoVelocidad"></div>
+
+    <h2>Dirección del viento</h2>
+    <div id="graficoDireccion"></div>
+</section>
+
+<section id="intensidad" class="seccion">
+    <h2>Estadísticos mensuales - Intensidad</h2>
+    <div id="tablaIntensidad"></div>
+</section>
+
+<section id="direccion" class="seccion">
+    <h2>Estadísticos mensuales - Dirección</h2>
+    <div id="tablaDireccion"></div>
+</section>
+
+<script src="script.js"></script>
+
+</body>
+</html>
